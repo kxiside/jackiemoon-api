@@ -66,7 +66,7 @@ Request - prod#create (requires token):
 {
     "prod": {
         "name": "satchel",
-        "catagory": "accesory",
+        "catagory": "accessory",
         "price": "40",
         "description": "handmade 2 pocket satchel designed by Jackie Moon",
     }
