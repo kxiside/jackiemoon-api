@@ -28,4 +28,6 @@ const productSchema = new mongoose.Schema(
 	}
 )
 
+// virtuals
+
 module.exports = mongoose.model('Product', productSchema)
