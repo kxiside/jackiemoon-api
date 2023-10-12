@@ -12,11 +12,17 @@ const productSchema = new mongoose.Schema(
 		},
 		category: {
 			type: String,
+			enum: ['Art', 'Accessories', 'Clothing'],
+			default: 'Art',
 			required: true,
 		},
 		price: {
 			type: Number,
 			required: true,
+		},
+		image: {
+			data: Buffer,
+			contentType: String
 		},
 		owner: {
 			type: mongoose.Schema.Types.ObjectId,

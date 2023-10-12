@@ -45,7 +45,7 @@ router.get('/products/:id', (req, res, next) => {
 	Product.findById(req.params.id)
 		.then(handle404)
 		// if `findById` is succesful, respond with 200 and "example" JSON
-		.then((product) => res.status(200).json({ example: product.toObject() }))
+		.then((product) => res.status(200).json({ product: product.toObject() }))
 		// if an error occurs, pass it to the handler
 		.catch(next)
 })
