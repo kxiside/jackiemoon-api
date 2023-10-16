@@ -9,7 +9,6 @@ primary_region = "lax"
 [build]
 
 [env]
-  PORT = "8080"
   MONGODB_URI = "mongodb+srv://swendside:calisnow@kxiside.twdpsuq.mongodb.net/jackiemoon?retryWrites=true&w=majority"
   CLIENT_ORIGIN = "https://jackiemoonoriginals.netlify.app"
 
