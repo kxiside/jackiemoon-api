@@ -1,0 +1,23 @@
+# fly.toml app configuration file generated for jackiemoonapi on 2023-10-16T05:51:14-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "jackiemoonapi"
+primary_region = "lax"
+
+[build]
+
+[env]
+  PORT = "8080"
+  MONGODB_URI = "mongodb+srv://swendside:calisnow@kxiside.twdpsuq.mongodb.net/jackiemoon?retryWrites=true&w=majority"
+  CLIENT_ORIGIN = "https://jackiemoonoriginals.netlify.app"
+
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]

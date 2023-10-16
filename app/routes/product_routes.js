@@ -55,7 +55,7 @@ router.get('/products/:id', (req, res, next) => {
 })
 
 // CREATE
-// POST /examples
+// POST 
 router.post('/products', requireToken, (req, res, next) => {
 	// set owner of new example to be current user
 	req.body.product.owner = req.user.id
@@ -72,7 +72,7 @@ router.post('/products', requireToken, (req, res, next) => {
 })
 
 // UPDATE
-// PATCH /examples/5a7db6c74d55bc51bdf39793
+// PATCH 
 router.patch('/products/:id', requireToken, removeBlanks, (req, res, next) => {
 	// if the client attempts to change the `owner` property by including a new
 	// owner, prevent that by deleting that key/value pair
@@ -95,7 +95,7 @@ router.patch('/products/:id', requireToken, removeBlanks, (req, res, next) => {
 })
 
 // DESTROY
-// DELETE /examples/5a7db6c74d55bc51bdf39793
+// DELETE 
 router.delete('/products/:id', requireToken, (req, res, next) => {
 	Product.findById(req.params.id)
 		.then(handle404)
