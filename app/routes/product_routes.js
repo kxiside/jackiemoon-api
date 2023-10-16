@@ -27,10 +27,14 @@ const requireToken = passport.authenticate('bearer', { session: false })
 // instantiate a router (mini app that only handles routes)
 const router = express.Router()
 
+
+
+
 // INDEX
 // GET /products
 router.get('/products', (req, res, next) => {
 	Product.find()
+		.populate('owner')
 		.then((products) => {
 			return products.map((product) => product.toObject())
 		})

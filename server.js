@@ -2,6 +2,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const bodyParser = require("body-parser")
+
+
 
 // require route files
 const productRoutes = require('./app/routes/product_routes')
@@ -57,6 +60,8 @@ app.use(auth)
 // add `express.json` middleware which will parse JSON requests into
 // JS objects before they reach the route files.
 // The method `.use` sets up middleware for the Express application
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
 app.use(express.json())
 // this parses requests sent by `$.ajax`, which use a different content type
 app.use(express.urlencoded({ extended: true }))
@@ -67,6 +72,7 @@ app.use(requestLogger)
 // register route files
 app.use(productRoutes)
 app.use(userRoutes)
+app.use("/uploads", express.static("uploads"))
 
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
